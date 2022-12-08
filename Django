@@ -1,0 +1,16 @@
+from django.http import HttpResponse
+
+def hello_world(request):  
+    return HttpResponse('Hello World')
+
+
+from django.conf.urls import url
+from django.contrib import admin
+
+from . import views
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^$', views, hello_world),
+
+]
